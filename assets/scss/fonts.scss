@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Orbitron";
+  font-weight: 400;
+  src: url("~/assets/fonts/Orbitron.ttf");
+}
+@font-face {
+  font-family: "Michroma";
+  font-weight: 400;
+  src: url("~/assets/fonts/Michroma.ttf");
+}
+$font-orbitron: "Orbitron";
+$font-michroma: "Michroma";
+
+@mixin michroma {
+  font-family: $font-michroma;
+  font-weight: 400;
+}
+@mixin orbitron {
+  font-family: $font-orbitron;
+  font-weight: 400;
+}
