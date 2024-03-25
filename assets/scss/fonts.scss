@@ -8,8 +8,14 @@
   font-weight: 400;
   src: url("~/assets/fonts/Michroma.ttf");
 }
+@font-face {
+  font-family: "Noto";
+  font-weight: 400;
+  src: url("~/assets/fonts/Noto.ttf");
+}
 $font-orbitron: "Orbitron";
 $font-michroma: "Michroma";
+$font-noto: "Noto";
 
 @mixin michroma {
   font-family: $font-michroma;
@@ -17,5 +23,9 @@ $font-michroma: "Michroma";
 }
 @mixin orbitron {
   font-family: $font-orbitron;
+  font-weight: 400;
+}
+@mixin noto {
+  font-family: $font-noto;
   font-weight: 400;
 }

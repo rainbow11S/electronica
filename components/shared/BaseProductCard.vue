@@ -39,6 +39,7 @@ const props = defineProps(["product"]);
   img {
     width: 260px;
     height: 260px;
+    object-fit: contain;
   }
   .title-card {
     @include michroma;

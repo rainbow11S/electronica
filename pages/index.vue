@@ -58,7 +58,24 @@
     <div class="row main-block-card">
       <SharedBaseProductCard v-for="res in data?.products" :product="res" />
     </div>
-    <div class="block"></div>
+    <div class="blocks-category">
+      <div class="block-category">
+        <p class="text-block">iPhone <br /><span>от 40000 p.</span></p>
+        <img class="telephones" src="/images/iphones-fullhd.png" alt="" />
+      </div>
+      <div class="block-category">
+        <p class="text-block">iPad <br /><span>от 29000 p.</span></p>
+        <img class="tablets" src="/images/ipad-fullhd.png" alt="" />
+      </div>
+      <div class="block-category">
+        <p class="text-block">AirPods <br /><span>от 12000 p.</span></p>
+        <img class="headphones" src="/images/airpods-fullhd.png" alt="" />
+      </div>
+      <div class="block-category">
+        <p class="text-block">Watches <br /><span>от 25000 p.</span></p>
+        <img class="watches" src="/images/watches-fullhd.png" alt="" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -128,5 +145,53 @@ body {
   justify-content: center;
   gap: 40px 0;
   padding-top: 100px;
+}
+.blocks-category {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  gap: 30px;
+  padding: 100px 0;
+  margin-top: 100px;
+  background-color: #3a3a3a;
+
+  .block-category {
+    position: relative;
+    width: 450px;
+    min-height: 350px;
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: #1a1a1d;
+
+    .text-block {
+      @include orbitron;
+      color: #ffffff;
+      font-size: 20px;
+      margin: 0;
+      padding-top: 25px;
+      text-align: center;
+    }
+    img {
+      width: 300px;
+      position: absolute;
+    }
+    .telephones {
+      bottom: -70px;
+      left: 75px;
+    }
+    .tablets {
+      bottom: -85px;
+      right: -40px;
+    }
+    .headphones {
+      bottom: -20px;
+      right: 75px;
+    }
+    .watches {
+      bottom: -40px;
+      left: -20px;
+    }
+  }
 }
 </style>

@@ -10,11 +10,22 @@
       <p class="category-name">Dyson</p>
     </div>
     <div>
-      <img class="login-icon" src="/icons/login.svg" alt="" />
+      <button class="login-button" @click="isLogin">
+        <img class="login-icon" src="/icons/login.svg" alt="" />
+      </button>
+      <SharedBaseRegisterWindow v-if="login" />
       <img class="ellipsis-icon" src="/icons/ellipsis.svg" alt="" />
     </div>
   </header>
 </template>
+
+<script setup>
+const login = ref(false);
+
+const isLogin = () => {
+  login.value = true;
+};
+</script>
 
 <style lang="scss">
 .site-header {
@@ -38,7 +49,17 @@
       color: #ffffff;
       font-size: 25px;
       margin: auto 0;
+      transition: 0.3s;
+
+      &:hover {
+        color: #950740;
+      }
     }
+  }
+  .login-button {
+    outline: none;
+    background-color: transparent;
+    border: none;
   }
   .login-icon,
   .ellipsis-icon {
