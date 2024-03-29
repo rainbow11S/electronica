@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="preview">
-      <img src="/images/preview-iphone.png" alt="" />
+      <SharedBaseImagesSlider :images="images" />
     </div>
     <div class="categories-main">
       <h4 class="block-headline">CATEGORIES</h4>
@@ -54,10 +54,6 @@
         </div>
       </div>
     </div>
-    <h4 class="block-headline">POPULAR PRODUCTS</h4>
-    <div class="row main-block-card">
-      <SharedBaseProductCard v-for="res in data?.products" :product="res" />
-    </div>
     <div class="blocks-category">
       <div class="block-category">
         <p class="text-block">iPhone <br /><span>от 40000 p.</span></p>
@@ -76,10 +72,20 @@
         <img class="watches" src="/images/watches-fullhd.png" alt="" />
       </div>
     </div>
+    <h4 class="block-headline">POPULAR PRODUCTS</h4>
+    <div class="row main-block-card">
+      <SharedBaseProductCard v-for="res in data?.products" :product="res" />
+    </div>
   </div>
 </template>
 
 <script setup>
+const images = [
+  "/images/preview-iphone.png",
+  "/images/preview-iphone2.webp",
+  "/images/preview-iphone3.jpeg",
+  "/images/preview-iphone4.jpeg",
+];
 const { data } = await useFetch("https://dummyjson.com/products");
 console.log(data.value);
 </script>
@@ -141,20 +147,15 @@ body {
     }
   }
 }
-.main-block-card {
-  justify-content: center;
-  gap: 40px 0;
-  padding-top: 100px;
-}
 .blocks-category {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 100%;
   gap: 30px;
   padding: 100px 0;
-  margin-top: 100px;
-  background-color: #3a3a3a;
+  margin: 100px 30px;
+  border-radius: 30px;
+  background-color: #7b7b7b;
 
   .block-category {
     position: relative;
@@ -193,5 +194,10 @@ body {
       left: -20px;
     }
   }
+}
+.main-block-card {
+  justify-content: center;
+  gap: 40px 0;
+  padding-top: 100px;
 }
 </style>

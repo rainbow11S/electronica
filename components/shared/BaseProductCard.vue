@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="product-card">
-      <img :src="product?.images[0]" alt="" />
+      <SharedBaseImagesSlider :images="product.images" />
       <h5 class="title-card">{{ product?.title }}</h5>
       <div class="block-prices">
         <p class="decoration-price">{{ product?.price + "$" }}</p>

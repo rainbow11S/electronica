@@ -1,7 +1,7 @@
 <template>
   <div style="overflow-x: clip">
-    <LayoutHeader />
+    <LayoutMainHeader />
     <slot />
-    <LayoutFooter />
+    <LayoutMainFooter />
   </div>
 </template>

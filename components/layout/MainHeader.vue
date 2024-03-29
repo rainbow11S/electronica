@@ -10,21 +10,19 @@
       <p class="category-name">Dyson</p>
     </div>
     <div>
-      <button class="login-button" @click="isLogin">
+      <button class="login-button">
         <img class="login-icon" src="/icons/login.svg" alt="" />
       </button>
-      <SharedBaseRegisterWindow v-if="login" />
+      <SharedBaseRegisterWindow />
       <img class="ellipsis-icon" src="/icons/ellipsis.svg" alt="" />
     </div>
   </header>
 </template>
 
-<script setup>
-const login = ref(false);
-
-const isLogin = () => {
-  login.value = true;
-};
+<script setup lang="js">
+// onMounted(){
+//   document.getElementById("form").style.display = "block";
+// }
 </script>
 
 <style lang="scss">
